@@ -61,5 +61,11 @@
 @mixin headings {
     font-family: v.$fuente-principal;
     font-weight: v.$black;
-    color: v.$negro;
+    margin: 0 auto;
+}
+
+@mixin nombre-pagina {
+    @include headings;
+    margin: 6rem 0 3rem 0;
+    text-align: center;
 }

@@ -1,5 +1,5 @@
 <main class="auth">
-    <h2 class="auth__heading">DevWebCamp</h2>
+    <h2 class="auth__heading"><?php echo $titulo?></h2>
     <p class="auth__descripcion"> Inicia Sessión en DevWebCamp</p>
 
     <form class="formulario">
@@ -27,7 +27,7 @@
     </form>
 
     <div class="acciones">
-        <a href="/crear" class="acciones__enlace">¿Aún no tienes una cuenta? Obten una aquí</a>
+        <a href="/registro" class="acciones__enlace">¿Aún no tienes una cuenta? Obten una aquí</a>
         <a href="/olvide" class="acciones__enlace">¿Olvidaste tu password?</a>
     </div>
 

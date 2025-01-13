@@ -6,6 +6,10 @@
     gap: 2rem;
     margin-top: 3rem;
 
+    &--centrar {
+        justify-content: center;
+    }
+
     &__enlace {
         color: v.$negro;
         font-size: 1.8rem;

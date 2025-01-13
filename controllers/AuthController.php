@@ -33,6 +33,17 @@ class AuthController {
                         $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['admin'] = $usuario->admin ?? null;
+
+                        //Admin 
+                        if($_SESSION['admin']) {
+                            header('Location: /admin');
+                        } else {
+                            //Usuario
+                            header('Location: /');
+                        }
+
+                        
+                        
                         
                     } else {
                         Usuario::setAlerta('error', 'Password Incorrecto');
@@ -190,7 +201,7 @@ class AuthController {
 
                 // Redireccionar
                 if($resultado) {
-                    header('Location: /');
+                    header('Location: /login');
                 }
             }
         }
@@ -243,4 +254,5 @@ class AuthController {
             'alertas' => Usuario::getAlertas()
         ]);
     }
+
 }

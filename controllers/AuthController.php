@@ -36,7 +36,7 @@ class AuthController {
 
                         //Admin 
                         if($_SESSION['admin']) {
-                            header('Location: /admin');
+                            header('Location: /admin/dashboard');
                         } else {
                             //Usuario
                             header('Location: /');
@@ -95,7 +95,6 @@ class AuthController {
 
                     // Generar el Token
                     $usuario->crearToken();
-
                     // Crear un nuevo usuario
                     $resultado =  $usuario->guardar();
 

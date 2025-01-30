@@ -23,20 +23,25 @@
         margin: 1.5rem 0;
     }
 
-    &__contenedor-sociales {
+    &__contenedor-icono {
         display: flex;
-    }
-
-    &__contenedor-icono{
-        background-color: v.$gris-oscuro;
-        width: 4rem;
     }
 
     &__icono {
-        color: v.$blanco;
+        background-color: v.$gris-oscuro;
+        width: 4rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 1rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        overflow: hidden;
+
+        i {
+            color: v.$blanco;
+            font-size: 2rem;
+        }
     }
 
     &__label {
@@ -47,13 +52,20 @@
 
     &__input {
         padding: 1rem;
-        flex: 1;
         font-size: 1.6rem;  
         border: 1px solid #e1e1e1;
         border-radius: .5rem;
 
         &--inpuut {
             border: none;
+        }
+
+        &--sociales{
+            @extend .formulario__input;
+            flex: 1;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
         }
     }
 

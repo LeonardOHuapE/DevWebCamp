@@ -5,11 +5,38 @@
     display: flex;
     flex-direction: column;
 
+    &__fieldset {
+        border: none;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__legend {
+        color: v.$negro;
+        font-size: 2.2rem;
+    }
+
     &__campo {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin: 1.5rem 0;
+    }
+
+    &__contenedor-sociales {
+        display: flex;
+    }
+
+    &__contenedor-icono{
+        background-color: v.$gris-oscuro;
+        width: 4rem;
+    }
+
+    &__icono {
+        color: v.$blanco;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__label {
@@ -21,9 +48,13 @@
     &__input {
         padding: 1rem;
         flex: 1;
-        font-size: 1.6rem;
+        font-size: 1.6rem;  
         border: 1px solid #e1e1e1;
         border-radius: .5rem;
+
+        &--inpuut {
+            border: none;
+        }
     }
 
     &__submit {
@@ -31,6 +62,10 @@
         @include m.tablet {
             width: auto;
             align-self: flex-start;
+        }
+
+        &--registrar {
+            width: 100%;
         }
     }
 }

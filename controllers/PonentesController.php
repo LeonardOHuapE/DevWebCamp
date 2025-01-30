@@ -9,6 +9,14 @@ class PonentesController {
             'titulo' => 'Ponentes / Conferencistas'
         ]);
     }
+
+    public static function crear(Router $router) {
+        $alertas = [];
+        $router->render('admin/ponentes/crear', [
+            'titulo' => 'Crear Ponente',
+            'alertas' => $alertas
+        ]);
+    }
 }
 
-?>
+?>∫

@@ -25,6 +25,9 @@
 
     &__contenedor-icono {
         display: flex;
+        border-radius: .5rem;
+        overflow: hidden;
+
     }
 
     &__icono {
@@ -33,10 +36,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 1rem;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        overflow: hidden;
 
         i {
             color: v.$blanco;

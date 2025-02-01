@@ -381,6 +381,8 @@ h3 {
 }
 .formulario__contenedor-icono {
   display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 .formulario__icono {
   background-color: #1E293B;
@@ -388,10 +390,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 1rem;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  overflow: hidden;
 }
 .formulario__icono i {
   color: #FFFFFF;

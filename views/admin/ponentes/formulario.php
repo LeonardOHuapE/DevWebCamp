@@ -75,7 +75,7 @@
         <input type="hidden" name="tags" id="tags_hidden">
     </div>
 </fieldset>
-
+<!-- Redes Sociales -->
 <fieldset class="formulario__fieldset">
     <legend class="formulario__legend">Redes Sociales</legend>
 
@@ -87,7 +87,6 @@
             <input
                 type="text"
                 name="redes_sociales[facebook]"
-                id="redes_sociales[facebook]"
                 placeholder="Facebook URL"
                 class="formulario__input--sociales"
                 value="<?php echo $ponente->sociales ?? ''?>"
@@ -103,7 +102,6 @@
             <input
                 type="text"
                 name="redes_sociales[twitter]"
-                id="redes_sociales[twitter]"
                 placeholder="Twitter URL"
                 class="formulario__input--sociales"
                 value="<?php echo $ponente->sociales ?? ''?>"
@@ -119,7 +117,6 @@
             <input
                 type="text"
                 name="redes_sociales[youtube]"
-                id="redes_sociales[youtube]"
                 placeholder="Youtube URL"
                 class="formulario__input--sociales"
                 value="<?php echo $ponente->sociales ?? ''?>"
@@ -135,8 +132,22 @@
             <input
                 type="text"
                 name="redes_sociales[instagram]"
-                id="redes_sociales[instagram]"
                 placeholder="Instagram URL"
+                class="formulario__input--sociales"
+                value="<?php echo $ponente->sociales ?? ''?>"
+            >
+        </div>
+    </div>
+
+    <div class="formulario__campo">
+        <div class="formulario__contenedor-icono">
+            <div class="formulario__icono">
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+            <input
+                type="text"
+                name="redes_sociales[tiktok]"
+                placeholder="Tiktok URL"
                 class="formulario__input--sociales"
                 value="<?php echo $ponente->sociales ?? ''?>"
             >
@@ -151,7 +162,6 @@
             <input
                 type="text"
                 name="redes_sociales[github]"
-                id="redes_sociales[github]"
                 placeholder="Github URL"
                 class="formulario__input--sociales"
                 value="<?php echo $ponente->sociales ?? ''?>"

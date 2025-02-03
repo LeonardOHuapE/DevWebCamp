@@ -8,7 +8,7 @@
 </div>
 
 <div class="dashboard__formulario">
-    <?php include_once __DIR__ . './../../templates/alertas.php'?>
+    <?php include_once __DIR__ . '/../../templates/alertas.php';?>
     <form method="POST" action="/admin/ponentes/crear" enctype="multipart/form-data" class="formulario">
         <?php include_once __DIR__ . '/formulario.php'?>
         <input type="submit" value="Agregar Ponente" class="formulario__submit formulario__submit--registrar">

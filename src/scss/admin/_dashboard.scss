@@ -45,10 +45,11 @@
     &__grid {
         display: flex;
         flex: 1;
+        overflow-y: auto;
     }
 
     &__sidebar {
-        background-color: color.adjust(v.$gris-oscuro, $lightness: -10%);
+        background-color: color.adjust(v.$gris-oscuro, $lightness: 5%);
         width: 15rem;
     }
 
@@ -64,7 +65,7 @@
         flex-direction: column;
         align-items: center;
         padding: 2rem;
-        color: color.adjust(v.$gris-oscuro , $lightness: 20%);
+        color: color.adjust(v.$gris-oscuro , $lightness: 30%);
         transition: 300ms background-color ease-in-out, 300ms color ease, 300ms border-radius ease;  
         &:hover,
         &--activo {
@@ -89,6 +90,7 @@
     &__contenido {
         padding: 1rem 1rem 3rem 1rem;
         width: 100%;
+        overflow-y: scroll;
         @include m.tablet {
             padding: 1rem 5rem 3rem 5rem;
         }

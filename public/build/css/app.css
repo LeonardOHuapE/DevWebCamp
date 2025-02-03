@@ -414,6 +414,24 @@ h3 {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+.formulario__listado {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.formulario__listado > li {
+  background-color: #007df4;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
 .formulario__submit {
   background-color: #007df4;
   padding: 1.5rem 4rem;
@@ -746,9 +764,10 @@ h3 {
 .dashboard__grid {
   display: flex;
   flex: 1;
+  overflow-y: auto;
 }
 .dashboard__sidebar {
-  background-color: rgb(12.808988764, 17.5056179775, 25.191011236);
+  background-color: rgb(38.595505618, 52.7471910112, 75.904494382);
   width: 15rem;
 }
 .dashboard__menu {
@@ -762,7 +781,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  color: rgb(64.3820224719, 87.9887640449, 126.6179775281);
+  color: rgb(81.5730337079, 111.4831460674, 160.4269662921);
   transition: 300ms background-color ease-in-out, 300ms color ease, 300ms border-radius ease;
 }
 .dashboard__enlace:hover, .dashboard__enlace--activo {
@@ -783,6 +802,7 @@ h3 {
 .dashboard__contenido {
   padding: 1rem 1rem 3rem 1rem;
   width: 100%;
+  overflow-y: scroll;
 }
 @media (min-width: 768px) {
   .dashboard__contenido {

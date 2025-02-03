@@ -29,8 +29,8 @@
         <input
             type="text"
             name="ciudad"
-            id="Ciudad"
-            placeholder="ciudad Ponente"
+            id="ciudad"
+            placeholder="Ciudad Ponente"
             class="formulario__input"
             value="<?php echo $ponente->ciudad ?? ''?>"
         >
@@ -86,10 +86,10 @@
             </div>
             <input
                 type="text"
-                name="redes_sociales[facebook]"
+                name="redes[facebook]"
                 placeholder="Facebook URL"
                 class="formulario__input--sociales"
-                value="<?php echo $ponente->sociales ?? ''?>"
+                value="<?php echo $ponente->redes['facebook'] ?? ''?>"
             >
         </div>
     </div>
@@ -101,10 +101,10 @@
             </div>
             <input
                 type="text"
-                name="redes_sociales[twitter]"
+                name="redes[twitter]"
                 placeholder="Twitter URL"
                 class="formulario__input--sociales"
-                value="<?php echo $ponente->sociales ?? ''?>"
+                value="<?php echo $ponente->redes['twitter'] ?? ''?>"
             >
         </div>
     </div>
@@ -116,10 +116,10 @@
             </div>
             <input
                 type="text"
-                name="redes_sociales[youtube]"
+                name="redes[youtube]"
                 placeholder="Youtube URL"
                 class="formulario__input--sociales"
-                value="<?php echo $ponente->sociales ?? ''?>"
+                value="<?php echo $ponente->redes['youtube'] ?? ''?>"
             >
         </div>
     </div>
@@ -131,10 +131,10 @@
             </div>
             <input
                 type="text"
-                name="redes_sociales[instagram]"
+                name="redes[instagram]"
                 placeholder="Instagram URL"
                 class="formulario__input--sociales"
-                value="<?php echo $ponente->sociales ?? ''?>"
+                value="<?php echo $ponente->redes['instagram'] ?? ''?>"
             >
         </div>
     </div>
@@ -146,10 +146,10 @@
             </div>
             <input
                 type="text"
-                name="redes_sociales[tiktok]"
+                name="redes[tiktok]"
                 placeholder="Tiktok URL"
                 class="formulario__input--sociales"
-                value="<?php echo $ponente->sociales ?? ''?>"
+                value="<?php echo $ponente->redes['tiktok'] ?? ''?>"
             >
         </div>
     </div>
@@ -161,10 +161,10 @@
             </div>
             <input
                 type="text"
-                name="redes_sociales[github]"
+                name="redes[github]"
                 placeholder="Github URL"
                 class="formulario__input--sociales"
-                value="<?php echo $ponente->sociales ?? ''?>"
+                value="<?php echo $ponente->redes['github'] ?? ''?>"
             >
         </div>
     </div>

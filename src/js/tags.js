@@ -3,8 +3,9 @@
 
     if(tagsInput){
         tagsInput.addEventListener('keypress', guardarTags);
-        listadoTags = document.querySelector('#tags');
-        tags = [];
+        tagDiv = document.querySelector('#tags');
+        tagInputHidden = document.querySelector('[name="tags"]');
+        let tags = [];
 
         function guardarTags(e){
             if(e.keyCode === 44) {
@@ -17,13 +18,25 @@
         }
 
         function mostrarTags(){
-            listadoTags.textContent = '';
+            tagDiv.textContent = '';
             tags.forEach(tag => {
                 const etiqueta = document.createElement('LI');
                 etiqueta.textContent = tag;
                 etiqueta.classList.add('formulario__tag');
-                listadoTags.appendChild(etiqueta);
+                etiqueta.ondblclick = eliminarTag;
+                tagDiv.appendChild(etiqueta);
             })
+            actualizarTagInputHidden();
+        }
+
+        function eliminarTag(e){
+            e.target.remove();
+            tags = tags.filter( tag => tag !== e.target.textContent );
+            actualizarTagInputHidden();
+        }
+
+        function actualizarTagInputHidden() {
+            tagInputHidden.value = tags.toString();
         }
     } 
-}());
+})();

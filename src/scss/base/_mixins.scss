@@ -148,3 +148,27 @@
 @mixin shadow {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin tags {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    > li {
+        background-color: v.$azul;
+        padding: 1rem;
+        border-radius: .5rem;
+        font-size: 1.4rem;
+        font-weight: v.$bold;
+        color: v.$blanco;
+        text-transform: uppercase;
+    }
+}

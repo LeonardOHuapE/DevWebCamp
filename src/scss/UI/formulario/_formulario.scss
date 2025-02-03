@@ -68,6 +68,10 @@
         }
     }
 
+    &__listado {
+        @include m.tags;
+    }
+
     &__submit {
         @include m.boton(v.$azul, #fff);
         @include m.tablet {

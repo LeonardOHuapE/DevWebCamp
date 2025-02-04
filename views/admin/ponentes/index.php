@@ -51,3 +51,7 @@
         <p class="text-center">No hay Ponentes registrados</p>
     <?php }?>
 </div>
+
+<?php 
+    echo $paginacion;
+?>

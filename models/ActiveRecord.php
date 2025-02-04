@@ -112,6 +112,13 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
+    //Contar todos los registros de la tabla
+    public static function total() {
+        $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+        return array_shift( $total );
+    }
 
     // Busca un registro por su id
     public static function find($id) {
@@ -126,6 +133,13 @@ class ActiveRecord {
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
+
+        // Obtener Registros cde acuerdo a la paginacion
+    public static function paginar($por_pagina, $offset){
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT {$por_pagina} OFFSET {$offset}";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    } 
 
     // Busqueda Where con Columna 
     public static function where($columna, $valor) {

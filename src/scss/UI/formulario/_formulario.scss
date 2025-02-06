@@ -49,13 +49,14 @@
         color: rgba(v.$negro, .8);
     }   
 
-    &__input {
+    &__input,
+    &__select {
         padding: 1rem;
         font-size: 1.6rem;  
         border: 1px solid #e1e1e1;
         border-radius: .5rem;
 
-        &--inpuut {
+        &--input {
             border: none;
         }
 
@@ -66,6 +67,11 @@
             border-bottom-left-radius: 0;
 
         }
+    }
+
+    &__radio {
+        display: flex;
+        gap: 2rem;
     }
 
     &__listado {

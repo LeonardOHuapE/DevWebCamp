@@ -29,7 +29,7 @@
             <?php foreach($categorias as $categoria) {?>
                 <option <?php echo ($evento->categoria_id === $categoria->id) ? 'selected' : ''?> value="<?php echo $categoria->id?>"><?php echo $categoria->nombre?></option>
             <?php }?> 
-        </select>  
+        </select>
     </div>
 
     <div class="formulario__campo">
@@ -47,17 +47,19 @@
                 </div>
             <?php }?>
         </div>
+        <input type="hidden" name="dia_id" value="">
     </div>
 
-    <div id="horas" class="formulario__campo">
+    <div class="formulario__campo">
         <label for="hora" class="formulario__label">Seleccionar Hora del Evento</label>
         
-        <ul class="horas">
+        <ul id="horas" class="horas">
             <?php foreach ($horas as $hora){?>
-                <li class="horas__hora"><?php echo $hora->hora?></li>
+                <li data-hora-id="<?php echo $hora->id?>" class="horas__hora"><?php echo $hora->hora?></li>
             <?php }?>
         </ul>
     </div>
+    <input type="hidden" name="hora_id" value="">
 </fieldset>
 
 <fieldset class="formulario__fieldset">

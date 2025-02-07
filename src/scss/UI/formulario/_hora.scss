@@ -17,8 +17,20 @@
 
         &:hover {
             cursor: pointer;
+        }
+
+        &--seleccionado {
             background-color: v.$azul;
             color: v.$blanco;
+        }
+
+        &--deshabilitado {
+            border: 1px solid v.$gris;
+            color: v.$gris;
+
+            &:hover {
+                cursor: not-allowed;
+            }
         }
 
     }

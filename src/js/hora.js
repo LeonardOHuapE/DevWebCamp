@@ -5,8 +5,8 @@
         //Selectores
         const categoria = document.querySelector("[name='categoria_id']");
         const dias = document.querySelectorAll('[name="dia"]');
-        const inputHiddenDia = document.querySelector('.dia_id');
-        const inputHiddenHora = document.querySelector('.hora_id');
+        const inputHiddenDia = document.querySelector('[name="dia_id"]');
+        const inputHiddenHora = document.querySelector('[name="hora_id"]');
 
         //Objecto de busqueda
         let busqueda = {
@@ -29,24 +29,36 @@
         async function buscarEventos () {
             try {
                 const { categoria_id, dia } = busqueda;
-                const URL = `api/evento-horario?dia=${dia}&categoria=${categoria_id}`;
+                const URL = `api/evento-horario?categoria=${categoria_id}&dia=${dia}`;
                 const resultado = await fetch(URL);
-                const eventos = resultado.json();
-                
-                obtenerHorasDisponibles();
+                const evento = await resultado.json();
+                obtenerHorasDisponibles(evento);
 
             } catch (error) {
                 console.log(error);
             }
         }
 
-        function obtenerHorasDisponibles () {
-            const horas = document.querySelectorAll('#horas');
+        function obtenerHorasDisponibles (evento) {
+            const horasTomadas = evento.map;
+            const listadoHoras = document.querySelectorAll('#horas li');
+            const listadoHorasArray = Array.from(listadoHoras);
+            const resultado = listadoHorasArray.filter(hora => hora.dataset.horaId === horasTomadas.hora_id);
+
+
+
+            const horas = document.querySelectorAll('.horas__hora');
             horas.forEach( hora => hora.addEventListener('click', selecionarHora) );
         }
 
         function selecionarHora (e) {
-            inputHiddenDia.value = e.target.dataset.horaId
+
+            const selecionadoPrevio = document.querySelector('.horas__hora--seleccionado');
+            if (selecionadoPrevio) {
+                selecionadoPrevio.classList.remove('horas__hora--seleccionado');
+            }  
+            e.target.classList.add('horas__hora--seleccionado');
+            inputHiddenHora.value = e.target.dataset.horaId
         }
 
     }

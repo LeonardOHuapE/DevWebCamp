@@ -1,7 +1,7 @@
 {
   "name": "devwebcamp-php-mvc-mysql",
   "version": "1.0.0",
-  "description": "Proyecto Final Desarrollo Web Completo con @codigoconjuan",
+  "description": "Proyecto Desarrollo Web",
   "main": "index.js",
   "scripts": {
     "dev": "gulp dev"

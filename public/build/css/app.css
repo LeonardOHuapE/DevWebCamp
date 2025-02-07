@@ -508,8 +508,17 @@ h3 {
 }
 .horas__hora:hover {
   cursor: pointer;
+}
+.horas__hora--seleccionado {
   background-color: #007df4;
   color: #FFFFFF;
+}
+.horas__hora--deshabilitado {
+  border: 1px solid #64748B;
+  color: #64748B;
+}
+.horas__hora--deshabilitado:hover {
+  cursor: not-allowed;
 }
 
 .header {

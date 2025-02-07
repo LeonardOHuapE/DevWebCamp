@@ -34,7 +34,7 @@ class EventosController {
             }
         }
 
-
+        
         $router->render('admin/eventos/crear', [
             'titulo' => 'Crear Evento',
             'alertas' => $alertas,

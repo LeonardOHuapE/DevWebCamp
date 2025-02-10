@@ -516,6 +516,7 @@ h3 {
 .horas__hora--deshabilitado {
   border: 1px solid #64748B;
   color: #64748B;
+  background-color: #F8FAFC;
 }
 .horas__hora--deshabilitado:hover {
   cursor: not-allowed;
@@ -976,5 +977,28 @@ h3 {
   .paginacion__enlace--numero {
     display: inline;
   }
+}
+
+.listado-ponentes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+.listado-ponentes__ponente {
+  padding: 1rem;
+  border: 1px solid #007df4;
+  border-radius: 1rem;
+  color: #007df4;
+  text-align: center;
+}
+.listado-ponentes__ponente:hover {
+  cursor: pointer;
+}
+.listado-ponentes__ponente--seleccionado {
+  background-color: #007df4;
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=app.css.map */

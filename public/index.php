@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use Controllers\APIEvento;
+use Controllers\APIPonente;
 use MVC\Router;
 use Controllers\AuthController;
 use Controllers\DashboardController;
@@ -54,6 +55,7 @@ $router->post('/admin/eventos/crear', [EventosController::class, 'crear']);
 
 //API Eventos
 $router->get('/admin/eventos/api/evento-horario', [APIEvento::class, 'index']);
+$router->get('/admin/eventos/api/ponentes', [APIPonente::class, 'index']);
 
 
 $router->get('/admin/registrados', [RegistrosController::class, 'index']);

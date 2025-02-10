@@ -175,7 +175,7 @@ class ActiveRecord {
         $query .= " ') ";
 
         // debuguear($query); // Descomentar si no te funciona algo
-
+        //debuguear($query);
         // Resultado de la consulta
         $resultado = self::$db->query($query);
         return [

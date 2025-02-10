@@ -19,6 +19,7 @@ class APIEvento {
 
         //Consultar a la base de datos con el modelo
         $eventos = EventoHorario::whereArray(['categoria_id' => $categoria_id, 'dia_id'=>$dia_id,]) ?? [];
+        header('Content-Type: application/json');
         echo json_encode($eventos); 
     }
 }

@@ -46,7 +46,7 @@
         }
 
         function mostrarPonentes () {
-            inputHiddenPonente.value = '':
+            inputHiddenPonente.value = '';
             while(listadoPonentes.firstChild) {
                 listadoPonentes.removeChild(listadoPonentes.firstChild);
             }

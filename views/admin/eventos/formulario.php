@@ -43,6 +43,7 @@
                         name="dia"
                         id="<?php echo strtolower($dia->nombre) ?>"
                         value="<?php echo $dia->id?>"
+                        <?php echo $evento->dia_id === $dia->id ? 'checked' : ''?>
                     >
                 </div>
             <?php }?>
@@ -51,7 +52,7 @@
     </div>
 
     <div class="formulario__campo">
-        <label for="hora" class="formulario__label">Seleccionar Hora del Evento</label>
+        <label class="formulario__label">Seleccionar Hora del Evento</label>
         
         <ul id="horas" class="horas">
             <?php foreach ($horas as $hora){?>
@@ -66,7 +67,7 @@
     <legend class="formulario__legend">Informacion Extra</legend>
     
     <div class="formulario__campo">
-        <label for="ponentes" class="formulario__label">Ponente</label>
+        <label for="ponente" class="formulario__label">Ponente</label>
         <input 
             type="text"
             id="ponente"

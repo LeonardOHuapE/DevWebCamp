@@ -49,16 +49,15 @@
             }
         }
 
-        function obtenerHorasDisponibles (eventos) {
+        function obtenerHorasDisponibles (eventosArray) {
             const listadoHoras = document.querySelectorAll('#horas li');
             listadoHoras.forEach( li => li.classList.add('horas__hora--deshabilitado') );
 
-            const horasTomadas = eventos.map( evento => evento.hora_id );
+            const horasTomadas = eventosArray.map( evento => evento.hora_id );
+            
 
             const listadoHorasArray = Array.from(listadoHoras);
-            const horasDisponibles = listadoHorasArray.filter(hora => hora.dataset.horaId != horasTomadas);
-            //Otra Opcion del foreach
-            const horasDisponibles2 = listadoHorasArray.filter( li => !horasTomadas.includes(li.dataset.horaId));
+            const horasDisponibles = listadoHorasArray.filter( li => !horasTomadas.includes(li.dataset.horaId));
 
             horasDisponibles.forEach( hora => hora.classList.remove('horas__hora--deshabilitado'))
             const horas = document.querySelectorAll('#horas li:not(.horas__hora--deshabilitado)');

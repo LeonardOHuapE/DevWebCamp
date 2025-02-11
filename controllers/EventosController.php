@@ -98,13 +98,8 @@ class EventosController {
         $horas = Hora::all('ASC');
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            debuguear('Actizalizando');
+                
         }
-
-
-
-
-
 
 
         $router->render('admin/eventos/editar', [

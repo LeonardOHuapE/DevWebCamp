@@ -1,7 +1,7 @@
 <?php
 namespace Model;
+#[\AllowDynamicProperties]
 class ActiveRecord {
-
     //Especificidad de Variables 
     public $id;
 

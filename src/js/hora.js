@@ -10,9 +10,17 @@
 
         //Objecto de busqueda
         let busqueda = {
-            categoria_id: '',
-            dia: ''
+            categoria_id: +categoria.value || '',
+            dia: +inputHiddenDia.value || ''
         }
+        console.log(busqueda);
+
+        if(!Object.values(busqueda).includes('')) {
+            const horaSeleccionada = document.querySelector(`data-hora-id={$}`)
+
+            buscarEventos();    
+
+        }   
 
         //Eventos
         categoria.addEventListener('change', terminoBusqueda);

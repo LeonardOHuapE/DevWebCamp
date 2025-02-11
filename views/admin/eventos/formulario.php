@@ -48,7 +48,7 @@
                 </div>
             <?php }?>
         </div>
-        <input type="hidden" name="dia_id" value="">
+        <input type="hidden" name="dia_id" value="<?php echo $evento->dia_id?>">
     </div>
 
     <div class="formulario__campo">

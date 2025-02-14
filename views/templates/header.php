@@ -31,7 +31,7 @@
             </h2>
         </a>
         <nav class="navegacion">
-            <a href="/devwebcamp" class="navegacion__enlace">DevWebCamp</a>
+            <a href="/devwebcamp" class="navegacion__enlace">Eventos</a>
             <a href="/paquetes" class="navegacion__enlace">Paquetes</a>
             <a href="/workshop-conferences" class="navegacion__enlace">Workshop Conferences</a>
             <a href="/registro" class="navegacion__enlace">Registro</a>

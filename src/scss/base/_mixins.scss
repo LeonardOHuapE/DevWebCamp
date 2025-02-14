@@ -75,6 +75,14 @@
     text-align: center;
 }
 
+@mixin descripcion-pagina {
+    text-align: center;
+    font-weight: v.$delgada;
+    font-size: 1.8rem;
+    color: v.$gris-oscuro;
+    margin-bottom: 5rem;
+}
+
 @mixin texto-fluido($min, $max) {
     font-size: clamp($min, -.8rem + 10vw, $max);
 }
@@ -170,5 +178,17 @@
         font-weight: v.$bold;
         color: v.$blanco;
         text-transform: uppercase;
+    }
+}
+
+@mixin card {
+    border: 1px solid v.$gris;
+    padding: 3rem;
+    border-radius: 1rem;
+
+    &__nombre {
+        font-size: 3rem;
+        font-weight: v.$bold;
+        text-align: center;
     }
 }

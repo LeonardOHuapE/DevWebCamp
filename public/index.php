@@ -8,6 +8,7 @@ use MVC\Router;
 use Controllers\AuthController;
 use Controllers\DashboardController;
 use Controllers\EventosController;
+use Controllers\PaginasController;
 use Controllers\PonentesController;
 use Controllers\RegalosController;
 use Controllers\RegistrosController;
@@ -65,6 +66,14 @@ $router->get('/admin/registrados', [RegistrosController::class, 'index']);
 
 
 $router->get('/admin/regalos', [RegalosController::class, 'index']);
+
+//Area Publica
+
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/devwebcamp', [PaginasController::class, 'eventos']);
+$router->get('/paquetes', [PaginasController::class, 'paquetes']);
+$router->get('/workshop-conferences', [PaginasController::class, 'conferencias']);
+
 
 
 

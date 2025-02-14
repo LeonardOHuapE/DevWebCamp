@@ -355,9 +355,89 @@ h3 {
   text-align: center;
 }
 
-.auth {
-  width: min(95%, 60rem);
+[class$=__descripcion] {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.8rem;
+  color: #1E293B;
+  margin-bottom: 5rem;
+}
+
+.devwebcamp__grid {
+  width: min(95%, 140rem);
   margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .devwebcamp__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+.devwebcamp__texto {
+  line-height: 2;
+}
+
+.paquetes__grid {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .paquetes__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.paquete {
+  border: 1px solid #64748B;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+.paquete__nombre {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+.paquete:nth-child(2) {
+  order: -1;
+}
+@media (min-width: 768px) {
+  .paquete:nth-child(2) {
+    order: unset;
+  }
+}
+.paquete__detalles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin: 1rem;
+  line-height: 2;
+}
+.paquete__precio {
+  font-size: 3rem;
+  color: #007df4;
+  font-weight: 700;
+}
+
+.agenda {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+}
+
+.evento__heading {
+  color: #007df4;
+  font-weight: 900;
+  font-size: 5rem;
+  text-align: left;
 }
 
 .formulario {
@@ -1000,5 +1080,10 @@ h3 {
 .listado-ponentes__ponente--seleccionado {
   background-color: #007df4;
   color: #FFFFFF;
+}
+
+.auth {
+  width: min(95%, 60rem);
+  margin: 0 auto;
 }
 /*# sourceMappingURL=app.css.map */

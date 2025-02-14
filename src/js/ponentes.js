@@ -9,7 +9,22 @@
 
         obtenerPonentes();
 
-        ponenteInput.addEventListener('input', buscarPonente);
+        //Rellenar el campo de ponentes si ya hay uno seleccionado
+        if(!inputHiddenPonente.value == "") {
+            (async () => {
+                await obtenerPonentes();
+                const idPonente = inputHiddenPonente.value;
+                ponenteSeleccionado = ponentes.filter( ponente => ponente.id == idPonente);
+                //Opcion 1
+                ponenteSeleccionado.forEach(ponente => {
+                    const{ nombre, id } = ponente; 
+                    const ponenteDiv = document.createElement('LI');
+                    ponenteDiv.classList.add('listado-ponentes__ponente', 'listado-ponentes__ponente--seleccionado');
+                    ponenteDiv.textContent = nombre;
+                    listadoPonentes.appendChild(ponenteDiv);
+                })
+            })();
+        }
 
         async function obtenerPonentes () {
             const URL = `api/ponentes`;
@@ -30,7 +45,9 @@
                 }
             })
         }
-
+        
+        //Evento de buscar y las funciones para mostrar al ponente
+        ponenteInput.addEventListener('input', buscarPonente);
 
         function buscarPonente(e) {
             const busqueda = e.target.value;

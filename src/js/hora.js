@@ -13,12 +13,16 @@
             categoria_id: +categoria.value || '',
             dia: +inputHiddenDia.value || ''
         }
-        console.log(busqueda);
 
         if(!Object.values(busqueda).includes('')) {
-            const horaSeleccionada = document.querySelector(`data-hora-id={$}`)
-
-            buscarEventos();    
+            (async () =>{
+                await buscarEventos(); 
+                const id = inputHiddenHora.value;
+                const horaSeleccionada = document.querySelector(`[data-hora-id="${id}"]`);
+                horaSeleccionada.classList.remove('horas__hora--deshabilitado');
+                horaSeleccionada.classList.add('horas__hora--seleccionado');
+                horaSeleccionada.onclick = selecionarHora;
+            })(); 
 
         }   
 

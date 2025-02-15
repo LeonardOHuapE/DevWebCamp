@@ -148,6 +148,14 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    //Busqueda de acuerdo a una columna y valor 
+    public static function ordenar($columna, $order) {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY $columna $order";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+
     // Busqueda Where con varios valores 
     public static function whereArray($array = []) {
         $query = "SELECT * FROM " . static::$tabla . " WHERE ";

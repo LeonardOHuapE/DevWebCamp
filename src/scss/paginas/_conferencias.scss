@@ -1,5 +1,6 @@
     @use 'base/variables' as v;
     @use 'base/mixins' as m;
+    @use 'sass:color';
 
     .agenda {
         @include m.contenedor
@@ -35,9 +36,14 @@
 
         &__info {
             background-color: v.$azul;
+            color: v.$blanco;
             padding: 3rem;
             border-radius: .5rem;
-        }
+            transition: background-color 300ms ease;
+            &:hover {
+            background-color: color.adjust(v.$azul, $lightness: -20%); 
+            }
+        } 
 
         &__titulo {
             font-size: 3rem;

@@ -415,6 +415,9 @@ h3 {
     order: unset;
   }
 }
+.paquete__nombre {
+  margin: 1rem 0 3rem 0;
+}
 .paquete__detalles {
   margin: 0;
   padding: 0;
@@ -423,9 +426,10 @@ h3 {
   line-height: 2;
 }
 .paquete__precio {
-  font-size: 3rem;
+  font-size: 6rem;
   color: #007df4;
-  font-weight: 700;
+  font-weight: 900;
+  text-align: center;
 }
 
 .agenda {
@@ -453,8 +457,13 @@ h3 {
 }
 .evento__info {
   background-color: #007df4;
+  color: #FFFFFF;
   padding: 3rem;
   border-radius: 0.5rem;
+  transition: background-color 300ms ease;
+}
+.evento__info:hover {
+  background-color: rgb(0, 72.7459016393, 142);
 }
 .evento__titulo {
   font-size: 3rem;

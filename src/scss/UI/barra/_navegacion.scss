@@ -14,6 +14,8 @@
         text-transform: uppercase;
         font-weight: v.$black;
         text-align: center;
+
+        &--activo,
         &:hover {
             background-color: v.$blanco;
             color: v.$azul;

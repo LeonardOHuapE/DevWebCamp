@@ -26,6 +26,17 @@
             #{$modificador}__heading {
                 color: v.$secundario;
             }
+
+            .evento__info {
+                background-color: v.$secundario;
+                &:hover {
+                    background-color: color.adjust(v.$secundario , $lightness: -20%);
+                }
+            }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: rgba(v.$blanco, .5);
         }
     }
 
@@ -48,6 +59,12 @@
         &__titulo {
             font-size: 3rem;
             font-weight: v.$bold;
+            margin: 1rem 0 2rem 0;
+            display: -webkit-box;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         &__detalles {
@@ -62,7 +79,7 @@
 
         &__autor {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             gap: 2rem;
             align-items: center;
         }
@@ -71,10 +88,6 @@
             width: 5rem;
             background-color: v.$blanco;
             border-radius: 50%;
-        }
-
-        &__nombre {
-
         }
 
     }

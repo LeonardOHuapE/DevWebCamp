@@ -31,10 +31,10 @@
             </h2>
         </a>
         <nav class="navegacion">
-            <a href="/devwebcamp" class="navegacion__enlace">Eventos</a>
-            <a href="/paquetes" class="navegacion__enlace">Paquetes</a>
-            <a href="/workshop-conferences" class="navegacion__enlace">Workshop Conferences</a>
-            <a href="/registro" class="navegacion__enlace">Registro</a>
+            <a href="/devwebcamp" class="navegacion__enlace <?php echo paginaActual("/devwebcamp") ? 'navegacion__enlace--activo' : ''?>">Eventos</a>
+            <a href="/paquetes" class="navegacion__enlace <?php echo paginaActual("/paquetes") ? 'navegacion__enlace--activo' : ''?>">Paquetes</a>
+            <a href="/workshop-conferences" class="navegacion__enlace <?php echo paginaActual("/workshop-conferences") ? 'navegacion__enlace--activo' : ''?>">Workshop Conferences</a>
+            <a href="/registro" class="navegacion__enlace <?php echo paginaActual("/registro") ? 'navegacion__enlace--activo' : ''?>">Registro</a>
         </nav>
     </div>
 </div>

@@ -451,6 +451,16 @@ h3 {
 .eventos--workshop .eventos__heading {
   color: #00c8c2;
 }
+.eventos--workshop .evento__info {
+  background-color: #00c8c2;
+}
+.eventos--workshop .evento__info:hover {
+  background-color: rgb(0, 98, 95.06);
+}
+.eventos .swiper-button-prev,
+.eventos .swiper-button-next {
+  color: rgba(255, 255, 255, 0.5);
+}
 
 .evento__hora {
   font-weight: 700;
@@ -468,6 +478,12 @@ h3 {
 .evento__titulo {
   font-size: 3rem;
   font-weight: 700;
+  margin: 1rem 0 2rem 0;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .evento__detalles {
   font-size: 1.6rem;
@@ -479,7 +495,7 @@ h3 {
 }
 .evento__autor {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 2rem;
   align-items: center;
 }
@@ -488,6 +504,7 @@ h3 {
   background-color: #FFFFFF;
   border-radius: 50%;
 }
+
 .formulario {
   display: flex;
   flex-direction: column;
@@ -855,7 +872,7 @@ h3 {
   font-weight: 900;
   text-align: center;
 }
-.navegacion__enlace:hover {
+.navegacion__enlace--activo, .navegacion__enlace:hover {
   background-color: #FFFFFF;
   color: #007df4;
 }
@@ -877,6 +894,7 @@ h3 {
   }
 }
 .barra__logo {
+  white-space: nowrap;
   font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
   margin-bottom: 2rem;
   color: #FFFFFF;

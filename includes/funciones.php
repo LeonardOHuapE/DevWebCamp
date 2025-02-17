@@ -11,6 +11,17 @@ function s($html) : string {
     return $s;
 }
 
-function paginaActual ($path) : bool {
+function paginaActual ($path = '') : bool {
     return str_contains($_SERVER['PATH_INFO'], $path) ? true : false;
+}
+
+function isAuth():bool {
+    return isset($_SESSION['nombre']) && !empty($_SESSION);
+}
+
+function isAdmin() {
+    session_start();
+    if (!isset($_SESSION['admin']) && empty($_SESSION['admin'])) {
+        header('Location: /');
+    }
 }

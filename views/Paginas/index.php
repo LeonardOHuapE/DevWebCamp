@@ -25,3 +25,14 @@
         </div>
     </div>
 </section>
+
+<section class="speakers">
+    <h2 class="speakers__heading">Speakers</h2>
+    <p class="speakers__descripcion">Conoce a nuestros profesionales en la Tecnologia</p>
+
+    <?php foreach($ponentes as $ponente) { ?>
+
+
+    <?php } ?>
+
+</section>

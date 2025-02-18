@@ -1,5 +1,8 @@
 <?php
 namespace Model;
+
+use GuzzleHttp\Psr7\Query;
+
 #[\AllowDynamicProperties]
 class ActiveRecord {
     //Especificidad de Variables 
@@ -113,8 +116,12 @@ class ActiveRecord {
         return $resultado;
     }
     //Contar todos los registros de la tabla
-    public static function total() {
+    public static function total($columna = '', $valor = '') {
         $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        if ($columna) {
+            $query .= " WHERE $columna = $valor";
+
+        }
         $resultado = self::$db->query($query);
         $total = $resultado->fetch_array();
         return array_shift( $total );

@@ -6,6 +6,7 @@ use Model\EventoHorario;
 
 class APIEvento {
     public static function index() {
+        autenticar();
         $dia_id = $_GET['dia'] ?? '';
         $categoria_id = $_GET['categoria'] ?? '';
 

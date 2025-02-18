@@ -13,11 +13,7 @@ use MVC\Router;
 class EventosController {
 
     public static function index (Router $router) {
-
-        if(!isAdmin()) {
-            header('Location: /');
-        }
-
+        autenticar();
         //Paginacion 1.-Pagina Actual, 2.- Registros por Pagina, 3.- Total de registros
 
         //Obtener la pagina actual si no hay no dirige a la primera 
@@ -56,11 +52,7 @@ class EventosController {
     }
 
     public static function crear(Router $router) {
-
-        if(!isAdmin()) {
-            header('Location: /');
-        }
-
+        autenticar();
         $alertas = [];
         $categorias = Categorias::all('ASC');
         $dias = Dias::all('ASC');
@@ -90,11 +82,7 @@ class EventosController {
     }
 
     public static function editar(Router $router) {
-
-        if(!isAdmin()) {
-            header('Location: /');
-        }
-
+        autenticar();
         $evento_id = $_GET['id'];
         $evento_id = filter_var($evento_id, FILTER_VALIDATE_INT);
         
@@ -130,11 +118,7 @@ class EventosController {
     }
 
     public static function eliminar() {
-
-        if(!isAdmin()) {
-            header('Location: /');
-        }
-
+        autenticar();
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
             $evento = Evento::find($id);

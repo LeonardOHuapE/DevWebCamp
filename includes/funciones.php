@@ -16,12 +16,21 @@ function paginaActual ($path = '') : bool {
 }
 
 function isAuth():bool {
+    if(session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     return isset($_SESSION['nombre']) && !empty($_SESSION);
 }
 
 function isAdmin() {
-    session_start();
-    if (!isset($_SESSION['admin']) && empty($_SESSION['admin'])) {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
+}
+
+function autenticar() {
+    if(!isAdmin()) {
         header('Location: /');
     }
 }

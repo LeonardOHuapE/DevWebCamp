@@ -26,6 +26,16 @@
         @include m.enlace;
     }
 
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__submit--logout {
+        @extend .header__enlace;
+    }
+
     &__logo {
         margin-top: 10rem;
         @include m.texto-fluido(3rem, 8rem);

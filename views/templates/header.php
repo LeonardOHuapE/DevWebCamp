@@ -4,8 +4,17 @@
         <div class="header__contenido">
 
         <nav class="header__navegacion">
-            <a href="/login" class="header__enlace">Iniciar Sesión</a>
-            <a href="/registro" class="header__enlace">Registro</a>
+            <?php if(isAuth()) {?>
+                <a href="<?php echo isAdmin() ? '/admin/dashboard' : '/terminar-registro' ?>" class="header__enlace">Administrar</a>
+                <form method="POST" action="/logout" class="header__form">
+                    <input type="submit" value="Cerrar Sesión" class="header__submit--logout">
+                </form>
+            <?php } else {?>
+                <a href="/login" class="header__enlace">Iniciar Sesión</a>
+                <a href="/registro" class="header__enlace">Registro</a>
+            <?php }?>
+
+
         </nav>
 
             <a href="/" >

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             spaceBetween: 15,
             freeMode: true,
             modules: [Navigation],
-            speed: 500,
+            speed: 1000,
             navigation: {
                 nextEl: '.swiper-button-next', // El botón siguiente
                 prevEl: '.swiper-button-prev'  // El botón previo

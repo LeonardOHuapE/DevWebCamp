@@ -39,7 +39,7 @@ class AuthController {
                             header('Location: /admin/dashboard');
                         } else {
                             //Usuario
-                            header('Location: /');
+                            header('Location: /terminar-registro');
                         }
 
                         
@@ -200,7 +200,7 @@ class AuthController {
 
                 // Redireccionar
                 if($resultado) {
-                    header('Location: /login');
+                    header('Location: /');
                 }
             }
         }

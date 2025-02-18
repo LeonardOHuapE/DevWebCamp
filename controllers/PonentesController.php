@@ -9,6 +9,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class PonentesController {
     public static function index(Router $router) {
+        autenticar();
         //Paginacion
         $pagina = $_GET['page'];
         $pagina = filter_var($pagina, FILTER_VALIDATE_INT);
@@ -34,6 +35,7 @@ class PonentesController {
     }
 
     public static function crear(Router $router) {
+        autenticar();
         $alertas = [];
         $ponente = new Ponente;
 
@@ -96,6 +98,7 @@ class PonentesController {
     }
 
     public static function editar(Router $router) {
+        autenticar();
         $alertas = [];
         $id = $_GET['id'];
         $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -151,6 +154,7 @@ class PonentesController {
     }
 
     public static function eliminar(){
+        autenticar();
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
             

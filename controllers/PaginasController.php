@@ -39,12 +39,16 @@ class PaginasController {
         $conferencias_total = Evento::total('categoria_id', 1);
         $workshops_total = Evento::total('categoria_id', 2);
 
+        //Obtener todos los speakers
+        $ponentes = Ponente::all();
+
         $router->render('paginas/index', [
             'titulo' => 'Inicio',
             'eventos' => $eventos_formateados,
             'ponentes_total' => $ponentes_total,
             'conferencias_total' => $conferencias_total,
-            'workshops_total' => $workshops_total
+            'workshops_total' => $workshops_total,
+            'ponentes' => $ponentes
         ]); 
     }
 

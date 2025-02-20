@@ -113,28 +113,33 @@
     <p class="boletos__descripcion">Todos los precios para DevWebCamp</p>
 
     <div class="boletos__grid">
-        <div class="boleto__info boleto__info--presencial">
+        <div class="boleto boleto--presencial">
             <h4 class="boleto__logo">
                 &#60;DevWebCamp />
             </h4>
-            <p class="boleto__texto">Presencial</p>
+            <p class="boleto__texto">Gratis</p>
             <p class="boleto__precio">$149.00</p>
         </div>
 
-        <div class="boleto__info boleto__info--virtual">
+        <div class="boleto boleto--virtual">
             <h4 class="boleto__logo">
                 &#60;DevWebCamp />
             </h4>
-            <p class="boleto__texto">Virtual</p>
+            <p class="boleto__texto">Gratis</p>
             <p class="boleto__precio">$49.00</p>
         </div>
 
-        <div class="boleto__info boleto__info--gratis">
-            <h4 class="boleto__logo">
+        <div class="boleto boleto--gratis">
+                <h4 class="boleto__logo">
                 &#60;DevWebCamp />
             </h4>
             <p class="boleto__texto">Gratis</p>
             <p class="boleto__precio">Gratis - $0</p>
         </div>
     </div>
+
+    <div class="boleto__enlace-contenedor">
+        <a href="/paquetes" class="boleto__enlace">Ver Paquetes</a>
+    </div>
+
 </section>

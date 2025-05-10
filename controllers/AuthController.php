@@ -33,6 +33,17 @@ class AuthController {
                         $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['admin'] = $usuario->admin ?? null;
+
+                        //Admin 
+                        if($_SESSION['admin']) {
+                            header('Location: /admin/dashboard');
+                        } else {
+                            //Usuario
+                            header('Location: /terminar-registro');
+                        }
+
+                        
+                        
                         
                     } else {
                         Usuario::setAlerta('error', 'Password Incorrecto');
@@ -84,7 +95,6 @@ class AuthController {
 
                     // Generar el Token
                     $usuario->crearToken();
-
                     // Crear un nuevo usuario
                     $resultado =  $usuario->guardar();
 
@@ -223,7 +233,7 @@ class AuthController {
 
         if(empty($usuario)) {
             // No se encontró un usuario con ese token
-            Usuario::setAlerta('error', 'Token No Válido');
+            Usuario::setAlerta('error', 'Token No Válido, Cuenta no confirmada');
         } else {
             // Confirmar la cuenta
             $usuario->confirmado = 1;
@@ -233,7 +243,7 @@ class AuthController {
             // Guardar en la BD
             $usuario->guardar();
 
-            Usuario::setAlerta('exito', 'Cuenta Comprobada Correctamente');
+            Usuario::setAlerta('exito', 'Cuenta Comprobada exitosamente');
         }
 
      
@@ -243,4 +253,5 @@ class AuthController {
             'alertas' => Usuario::getAlertas()
         ]);
     }
+
 }

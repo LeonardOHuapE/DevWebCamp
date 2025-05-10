@@ -1,12 +1,5 @@
-@use 'base/variables' as v;
 @use 'base/mixins' as m;
 
 .auth {
     @include m.contenedor-sm;
-
-    &__titulo {
-        text-align: center;
-        margin: 6rem 0 3rem 0;
-        font-size: 4.4rem;
-    }
 }

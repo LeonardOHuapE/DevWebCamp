@@ -1,7 +1,10 @@
 <?php
 namespace Model;
-class ActiveRecord {
 
+use GuzzleHttp\Psr7\Query;
+
+#[\AllowDynamicProperties]
+class ActiveRecord {
     //Especificidad de Variables 
     public $id;
 
@@ -107,10 +110,21 @@ class ActiveRecord {
     }
 
     // Obtener todos los Registros
-    public static function all() {
-        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC";
+    public static function all($orden = 'DESC') {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id {$orden}";
         $resultado = self::consultarSQL($query);
         return $resultado;
+    }
+    //Contar todos los registros de la tabla
+    public static function total($columna = '', $valor = '') {
+        $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        if ($columna) {
+            $query .= " WHERE $columna = $valor";
+
+        }
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+        return array_shift( $total );
     }
 
     // Busca un registro por su id
@@ -127,11 +141,40 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+        // Obtener Registros cde acuerdo a la paginacion
+    public static function paginar($por_pagina, $offset){
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT {$por_pagina} OFFSET {$offset}";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    } 
+
     // Busqueda Where con Columna 
     public static function where($columna, $valor) {
         $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
+    }
+
+    //Busqueda de acuerdo a una columna y valor 
+    public static function ordenar($columna, $order) {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY $columna $order";
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+
+    // Busqueda Where con varios valores 
+    public static function whereArray($array = []) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ";
+        foreach ($array as $key => $value) {
+            if($key == array_key_last($array)) {
+                $query .= "{$key} = '{$value}'";
+            } else {
+                $query .= "{$key} = '{$value}' AND ";
+            }
+        }
+        $resultado = self::consultarSQL($query);
+        return $resultado ;
     }
 
     // crea un nuevo registro
@@ -147,7 +190,7 @@ class ActiveRecord {
         $query .= " ') ";
 
         // debuguear($query); // Descomentar si no te funciona algo
-
+        //debuguear($query);
         // Resultado de la consulta
         $resultado = self::$db->query($query);
         return [

@@ -1,0 +1,93 @@
+    @use 'base/variables' as v;
+    @use 'base/mixins' as m;
+    @use 'sass:color';
+
+    .agenda {
+        @include m.contenedor
+
+    }
+
+    .eventos {
+        $modificador: &;
+        &__heading {
+            color: v.$azul;
+            font-weight: v.$black;
+            font-size: 5rem;
+            text-align: left;
+            font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+        }
+
+        &__fecha {
+            color: v.$gris;
+            margin: 3rem 0 1rem 0;
+        }
+
+        &--workshop {
+            #{$modificador}__heading {
+                color: v.$secundario;
+            }
+
+            .evento__info {
+                background-color: v.$secundario;
+                &:hover {
+                    background-color: color.adjust(v.$secundario , $lightness: -20%);
+                }
+            }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: rgba(v.$blanco, .5);
+        }
+    }
+
+    .evento {
+        &__hora {
+            font-weight: v.$bold;
+        }
+
+        &__info {
+            background-color: v.$azul;
+            color: v.$blanco;
+            padding: 3rem;
+            border-radius: .5rem;
+            transition: background-color 300ms ease;
+            &:hover {
+            background-color: color.adjust(v.$azul, $lightness: -20%); 
+            }
+        } 
+
+        &__titulo {
+            font-size: 3rem;
+            font-weight: v.$bold;
+            margin: 1rem 0 2rem 0;
+            display: -webkit-box;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        &__detalles {
+            font-size: 1.6rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+
+        &__autor {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        &__imagen {
+            width: 5rem;
+            background-color: v.$blanco;
+            border-radius: 50%;
+        }
+
+    }

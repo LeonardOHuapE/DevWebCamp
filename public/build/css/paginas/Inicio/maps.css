@@ -1,0 +1,13 @@
+.mapa {
+  height: 45rem;
+  margin-top: 10rem;
+}
+.mapa__heading {
+  margin: 0;
+  text-align: left;
+}
+.mapa__texto {
+  margin: 0;
+  font-size: 1.8rem;
+}
+/*# sourceMappingURL=maps.css.map */

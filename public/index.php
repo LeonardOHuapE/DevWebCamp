@@ -2,8 +2,16 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\APIEvento;
+use Controllers\APIPonente;
 use MVC\Router;
 use Controllers\AuthController;
+use Controllers\DashboardController;
+use Controllers\EventosController;
+use Controllers\PaginasController;
+use Controllers\PonentesController;
+use Controllers\RegalosController;
+use Controllers\RegistrosController;
 
 $router = new Router();
 
@@ -28,6 +36,45 @@ $router->post('/reestablecer', [AuthController::class, 'reestablecer']);
 // Confirmación de Cuenta
 $router->get('/mensaje', [AuthController::class, 'mensaje']);
 $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
+
+
+//Panel de Administración
+$router->get('/admin/dashboard', [DashboardController::class, 'index']);
+
+//PONENTES
+$router->get('/admin/ponentes', [PonentesController::class, 'index']);
+$router->get('/admin/ponentes/crear', [PonentesController::class, 'crear']);
+$router->post('/admin/ponentes/crear', [PonentesController::class, 'crear']);
+$router->get('/admin/ponentes/editar', [PonentesController::class, 'editar']);
+$router->post('/admin/ponentes/editar', [PonentesController::class, 'editar']);
+$router->post('/admin/ponentes/eliminar', [PonentesController::class, 'eliminar']);
+
+//EVENTOS
+$router->get('/admin/eventos', [EventosController::class, 'index']);
+$router->get('/admin/eventos/crear', [EventosController::class, 'crear']);
+$router->post('/admin/eventos/crear', [EventosController::class, 'crear']);
+$router->get('/admin/eventos/editar', [EventosController::class, 'editar']);
+$router->post('/admin/eventos/editar', [EventosController::class, 'editar']);
+$router->post('/admin/eventos/eliminar', [EventosController::class, 'eliminar']);
+
+//API Eventos
+$router->get('/admin/eventos/api/evento-horario', [APIEvento::class, 'index']);
+$router->get('/admin/eventos/api/ponentes', [APIPonente::class, 'index']);
+
+
+$router->get('/admin/registrados', [RegistrosController::class, 'index']);
+
+
+$router->get('/admin/regalos', [RegalosController::class, 'index']);
+
+//Area Publica
+
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/devwebcamp', [PaginasController::class, 'eventos']);
+$router->get('/paquetes', [PaginasController::class, 'paquetes']);
+$router->get('/workshop-conferences', [PaginasController::class, 'conferencias']);
+
+
 
 
 $router->comprobarRutas();

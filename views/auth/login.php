@@ -1,8 +1,10 @@
 <main class="auth">
-    <h2 class="auth__titulo">DevWebCamp</h2>
-    <p class="auth__descripcion"> Inicia Session o crea una cuenta</p>
+    <h2 class="auth__heading"><?php echo $titulo?></h2>
+    <p class="auth__descripcion"> Inicia Sessión en DevWebCamp</p>
 
-    <form class="formulario">
+    <?php include_once __DIR__ . '/../templates/alertas.php'?>
+
+    <form class="formulario" method="POST" action="/login">
         <div class="formulario__campo">
             <label for="email" class="formulario__label">Correo</label>
             <input 
@@ -12,6 +14,7 @@
                 class="formulario__input" 
                 placeholder="Tu Correo"/>
         </div>
+
         <div class="formulario__campo">
             <label for="password" class="formulario__label">Password</label>
             <input 
@@ -21,11 +24,12 @@
                 class="formulario__input" 
                 placeholder="Tu password"/>
         </div>
+
         <input type="submit" value="Iniciar Sesión" class="formulario__submit"> 
     </form>
 
     <div class="acciones">
-        <a href="/crear" class="acciones__enlace">¿Aún no tienes una cuenta? Obten una aquí</a>
+        <a href="/registro" class="acciones__enlace">¿Aún no tienes una cuenta? Obten una aquí</a>
         <a href="/olvide" class="acciones__enlace">¿Olvidaste tu password?</a>
     </div>
 

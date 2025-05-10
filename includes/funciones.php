@@ -10,3 +10,27 @@ function s($html) : string {
     $s = htmlspecialchars($html);
     return $s;
 }
+
+function paginaActual ($path = '') : bool {
+    return str_contains($_SERVER['PATH_INFO'] ?? '/', $path) ? true : false;
+}
+
+function isAuth():bool {
+    if(session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    return isset($_SESSION['nombre']) && !empty($_SESSION);
+}
+
+function isAdmin() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
+}
+
+function autenticar() {
+    if(!isAdmin()) {
+        header('Location: /');
+    }
+}
